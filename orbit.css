@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100svh;
+    width: 100vw;
+    background-image: url(starry-night-sky-png-61616514258.jpg);
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    grid-template-columns: 1fr;
+}
+.earth{
+    height: 450px;
+    width: 450px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: 5s rota-te infinite linear;
+    & .earthRotate{
+        position: static;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin: auto;
+        transform: translateY(-220%);
+        z-index: 10;
+        background-image: url(earth\(1\).png);
+        background-size: cover;
+    }
+    & .world{
+        position: absolute;
+        height: 280px;
+        width: 280px;
+        border-radius: 50%;
+        background-image: url(moon\ eclipse.jpg);
+        background-size: cover;
+        animation: 0.1s orbit ease infinite linear;
+    }
+}
+@keyframes rota-te{
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media all and (max-width: 768px) {
+    body{
+        padding: 10px;
+    }
+    .earth{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        .earthRotate{
+            height: 50px;
+            width: 50px;
+            transform: translateY(-195%);
+        }
+        .world{
+            height: 100px;
+            width: 100px;
+        }
+    }
+}
